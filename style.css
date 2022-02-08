@@ -1,0 +1,162 @@
+html {
+  box-sizing: border-box;
+}
+
+*, ::after, ::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: hsl(217, 54%, 11%);
+  font-family: "Outfit", sans-serif;
+  color:hsl(215, 51%, 70%);
+  font-weight: 300, 400, 600;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+/*
+- it does not make much sense to apply flexbox to elements like img, h, p etc.
+- flexbox does not have margin collapse (so the margins of two flexboxes is added up
+- flexbox is always used on the nearest child element not on the content of this child element (if I use div, it makes flex this div, not all the h's, p's and other elements in this div)
+*/
+.isResponsive {
+  display: flex;
+  flex-shrink: 1;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*
+- padding is something like stuffing - it is better to set it on this whole section element, because this automatically limit all the other children elements in this element -> I can set width of all these children elements to 100% and they will never overflow.
+- padding is not collapsing, so it means that if two element have 10px padding it will result in 20px padding together
+- on the other hand margin is collapsing so if I set margin o 10px on one element and 5px to other element it leads to 10px space
+*/
+.card {
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 1rem;
+  max-width: 335px;
+  padding: 1.5rem;
+  box-shadow: 1rem 1.7rem 0.8rem hsl(217, 65%, 8%), -1rem 1.7rem 0.8rem hsl(217, 65%, 8%);
+}
+
+.cardContent {   
+  align-items: flex-start;
+  flex-direction: column;
+  font-size: 1.1rem;
+}
+
+/*
+- img is inline element so we need to display it block because it leads to baseline alignment of both images
+- never add 'width' and 'height' properties to the html element, set it in CSS
+- I can put svg elements in the img tag and use src="" for adding the svg to the layout.
+*/
+.equilibriumImg {
+  border-radius: 0.4rem;
+  max-width: 100%;
+  display: block;
+}
+
+.imgWrapper {
+  position: relative;
+}
+
+/*
+- I need to use pseudo element for hover effect on img
+- pseudo element always needs property contain (it can be empty)
+- transition works as simple animation
+- I always need to use absolute position on the pseudo element and 
+  relative position to the original element in this cases
+*/
+.imgWrapper::after {
+  border-radius: 0.2rem;
+  content: "";
+  background-color: hsla(178, 100%, 50%, 0.5);
+  background-image: url("./images/icon-view.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 100ms ease-in-out;
+}
+
+.imgWrapper:hover::after {
+  opacity: 1;
+  transition: opacity 100ms ease-in-out;
+}
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+}
+
+h1:hover {
+  color:hsl(178, 100%, 50%)
+}
+
+p {
+  margin: 0;
+}
+
+.priceAndTime {
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/*
+- do not hesitate to use style with HTML elements in the classes!!
+*/
+.priceAndTime div {
+  display: flex;
+  align-items: center;
+}
+
+.priceAndTime img {
+  margin-right: 0.3rem;
+}
+
+.ethereum {
+  color:hsl(178, 100%, 50%);
+}
+
+.cardContent hr {
+  width: 100%;
+  border: none;
+  border-top: 1px hsl(215, 32%, 27%) solid;
+}
+
+.footer {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.footer img {
+  border-radius: 75%;
+  width: 2rem;
+  border: 1px hsl(0, 0%, 100%) solid;
+  margin-right: 0.5rem;
+}
+
+.footer span {
+  color:hsl(0, 0%, 100%);
+}
+
+/*I can use pseudo classes also on HTML elements in the classes not only to the HTML elements.*/
+.footer span:hover {
+  color:hsl(178, 100%, 50%);
+}
