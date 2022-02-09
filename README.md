@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/Ivuska/frontendmentor-NFT-preview-card-component/tree/NFT-component-v1]
-- Live Site URL: [https://ivuska.github.io/frontendmentor-NFT-preview-card-component/]
+- Solution URL: [Code in GitHub](https://github.com/Ivuska/frontendmentor-NFT-preview-card-component/tree/NFT-component-v1)
+- Live Site URL: [Live solution on GitHub pages](https://ivuska.github.io/frontendmentor-NFT-preview-card-component/)
 
 ## My process
 
@@ -54,11 +54,11 @@ I also plan to see some videos about some tips and good practices in CSS and HTM
 
 ### Useful resources
 
-- [https://www.youtube.com/watch?v=djbtPnNmc0I]
+- [Before and After pseudo elements explained - part one: how they work](https://www.youtube.com/watch?v=djbtPnNmc0I)
 
-- [https://www.youtube.com/watch?v=xoRbkm8XgfQ]
+- [CSS Before and After pseudo elements explained - part two: the content property](https://www.youtube.com/watch?v=xoRbkm8XgfQ)
 
-- [https://www.youtube.com/watch?v=djbtPnNmc0I]
+- [CSS Before and After pseudo elements explained - part three: as design elements](https://www.youtube.com/watch?v=djbtPnNmc0I)
 
 I met with Kevin Powell's video thanks to an recommendation from @pazspera and I found them really great and well understandable.I am well aware that I need a lot of practice but thanks to his videos i think and trust that I understand at least the basics rules of this topic. 
 
