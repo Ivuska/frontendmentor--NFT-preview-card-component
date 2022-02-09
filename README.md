@@ -54,11 +54,11 @@ I also plan to see some videos about some tips and good practices in CSS and HTM
 
 ### Useful resources
 
-- [Kevin Powell - Before and After pseudo elements explained - part one: how they work ](https://www.youtube.com/watch?v=djbtPnNmc0I)
+- [https://www.youtube.com/watch?v=djbtPnNmc0I]
 
-- [Kevin Powell - CSS Before and After pseudo elements explained - part two: the content property ](https://www.youtube.com/watch?v=xoRbkm8XgfQ)
+- [https://www.youtube.com/watch?v=xoRbkm8XgfQ]
 
-- [Kevin Powell - CSS Before and After pseudo elements explained - part three: as design elements](https://www.youtube.com/watch?v=djbtPnNmc0I) 
+- [https://www.youtube.com/watch?v=djbtPnNmc0I]
 
 I met with Kevin Powell's video thanks to an recommendation from @pazspera and I found them really great and well understandable.I am well aware that I need a lot of practice but thanks to his videos i think and trust that I understand at least the basics rules of this topic. 
 
