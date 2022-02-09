@@ -1,3 +1,27 @@
+/* table of contents
+
+  1. global styles
+
+  2. typography
+
+  3. layout
+   3.1 main layout settings
+   3.2 main image
+   3.3 content
+   3.4 footer
+
+  4. learning notes
+    4.1 flexbox
+    4.2 psudo-classes
+    4.3 pseudo-elements
+    4.4 best practice and notes (smth to padding, margin, img)
+*/
+
+
+/* =============
+   global styles
+   ============= */
+
 html {
   box-sizing: border-box;
 }
@@ -14,17 +38,36 @@ body {
   min-height: 100vh;
   background-color: hsl(217, 54%, 11%);
   font-family: "Outfit", sans-serif;
-  color:hsl(215, 51%, 70%);
+  color: hsl(215, 51%, 70%);
   font-weight: 300, 400, 600;
   line-height: 1.5;
   font-size: 18px;
 }
 
-/*
-- it does not make much sense to apply flexbox to elements like img, h, p etc.
-- flexbox does not have margin collapse (so the margins of two flexboxes is added up
-- flexbox is always used on the nearest child element not on the content of this child element (if I use div, it makes flex this div, not all the h's, p's and other elements in this div)
-*/
+/* =========
+  typography
+  ========== */
+
+h1 {
+  color: hsl(0, 0%, 100%);
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+}
+
+h1:hover {
+  color: hsl(178, 100%, 50%)
+}
+
+p {
+  margin: 0;
+}
+
+/* ======
+   layout
+   ====== */
+
+/* main layout settings */
+
 .isResponsive {
   display: flex;
   flex-shrink: 1;
@@ -32,12 +75,6 @@ body {
   padding: 0;
 }
 
-
-/*
-- padding is something like stuffing - it is better to set it on this whole section element, because this automatically limit all the other children elements in this element -> I can set width of all these children elements to 100% and they will never overflow.
-- padding is not collapsing, so it means that if two element have 10px padding it will result in 20px padding together
-- on the other hand margin is collapsing so if I set margin o 10px on one element and 5px to other element it leads to 10px space
-*/
 .card {
   background-color: hsl(216, 50%, 16%);
   border-radius: 1rem;
@@ -46,17 +83,14 @@ body {
   box-shadow: 1rem 1.7rem 0.8rem hsl(217, 65%, 8%), -1rem 1.7rem 0.8rem hsl(217, 65%, 8%);
 }
 
-.cardContent {   
+.cardContent {
   align-items: flex-start;
   flex-direction: column;
   font-size: 1.1rem;
 }
 
-/*
-- img is inline element so we need to display it block because it leads to baseline alignment of both images
-- never add 'width' and 'height' properties to the html element, set it in CSS
-- I can put svg elements in the img tag and use src="" for adding the svg to the layout.
-*/
+/* main image */
+
 .equilibriumImg {
   border-radius: 0.4rem;
   max-width: 100%;
@@ -67,13 +101,6 @@ body {
   position: relative;
 }
 
-/*
-- I need to use pseudo element for hover effect on img
-- pseudo element always needs property contain (it can be empty)
-- transition works as simple animation
-- I always need to use absolute position on the pseudo element and 
-  relative position to the original element in this cases
-*/
 .imgWrapper::after {
   border-radius: 0.2rem;
   content: "";
@@ -95,19 +122,7 @@ body {
   transition: opacity 100ms ease-in-out;
 }
 
-h1 {
-  color: hsl(0, 0%, 100%);
-  font-size: 1.6rem;
-  margin: 0.5rem 0;
-}
-
-h1:hover {
-  color:hsl(178, 100%, 50%)
-}
-
-p {
-  margin: 0;
-}
+/* content */
 
 .priceAndTime {
   justify-content: space-between;
@@ -115,9 +130,6 @@ p {
   margin: 1rem 0;
 }
 
-/*
-- do not hesitate to use style with HTML elements in the classes!!
-*/
 .priceAndTime div {
   display: flex;
   align-items: center;
@@ -128,7 +140,7 @@ p {
 }
 
 .ethereum {
-  color:hsl(178, 100%, 50%);
+  color: hsl(178, 100%, 50%);
 }
 
 .cardContent hr {
@@ -136,6 +148,8 @@ p {
   border: none;
   border-top: 1px hsl(215, 32%, 27%) solid;
 }
+
+/* footer */
 
 .footer {
   flex-direction: row;
@@ -153,10 +167,46 @@ p {
 }
 
 .footer span {
-  color:hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 100%);
 }
 
-/*I can use pseudo classes also on HTML elements in the classes not only to the HTML elements.*/
 .footer span:hover {
-  color:hsl(178, 100%, 50%);
+  color: hsl(178, 100%, 50%);
 }
+
+
+/* =================================
+  Learning notes from this challenge
+  ================================== */
+
+/* ======= flexbox ======= */
+/* It does not make much sense to apply flexbox to elements like img, h, p etc. */
+/* Flexbox does not have margin collapse (so the margins of two flexbox items are added up). */
+/* Flexbox is always used on the nearest child element not on the content of this 
+     child element (if I set display: flex on a div, it controls positioning of elements inside 
+     this div, but not content of those elements). */
+/* https://www.youtube.com/watch?v=u044iM9xsWU */
+
+/* ======= pseudo-classes ====== */
+/* I can use pseudo-classes also on any CSS selector (p, .footer, div>h2.test,...). */
+/* Do not hesitate to use HTML elements in selectors !! */
+
+/* ======= pseudo-elements ======= */
+/* Pseudo-element always needs property content (it can be empty string). */
+/* I always need to use absolute position on the pseudo element and */
+/* img is inline element so we need to display it block because it leads to baseline alignment
+     of both images */
+/* https://www.youtube.com/watch?v=zGiirUiWslI */
+
+/* ====== best practice and notes ===== */
+/* Never add 'width' and 'height' properties to the html element, set it in CSS. */
+/* I can put svg elements in the img tag and use src="" for adding the svg to the layout. */
+/* Padding is something like stuffing - it is better to set it on this whole section 
+     element, because this automatically limit all the other children elements in this 
+     element -> I can set width of all these children elements to 100% and they will never
+     overflow. */
+/* Padding is not collapsing, so it means that if two element have 10px padding it will 
+     result in 20px padding together on the other hand margin has top and bottom collapsing 
+     so if I set margin to 10px on one element and 5px to other element it leads to 10px space. */
+/* Check contrast of the page with DevTools in Chrome. */
+/* Transition works as simple animation. */
