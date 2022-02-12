@@ -48,10 +48,11 @@ body {
   typography
   ========== */
 
-h1 {
+h1 a {
   color: hsl(0, 0%, 100%);
   font-size: 1.6rem;
   margin: 0.5rem 0;
+  text-decoration: none;
 }
 
 h1:hover {
@@ -99,6 +100,7 @@ p {
 
 .imgWrapper {
   position: relative;
+  text-decoration: none;
 }
 
 .imgWrapper::after {
@@ -156,7 +158,8 @@ p {
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px hsl(215, 51%, 70%) solid;
 }
 
 .footer img {
@@ -166,11 +169,12 @@ p {
   margin-right: 0.5rem;
 }
 
-.footer span {
+.footer a {
   color: hsl(0, 0%, 100%);
+  text-decoration: none;
 }
 
-.footer span:hover {
+.footer a:hover {
   color: hsl(178, 100%, 50%);
 }
 
