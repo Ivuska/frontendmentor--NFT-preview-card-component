@@ -9,12 +9,6 @@
    3.2 main image
    3.3 content
    3.4 footer
-
-  4. learning notes
-    4.1 flexbox
-    4.2 psudo-classes
-    4.3 pseudo-elements
-    4.4 best practice and notes (smth to padding, margin, img)
 */
 
 
@@ -38,10 +32,21 @@ body {
   min-height: 100vh;
   background-color: hsl(217, 54%, 11%);
   font-family: "Outfit", sans-serif;
-  color: hsl(215, 51%, 70%);
-  font-weight: 300, 400, 600;
+  color: hsl(215deg 58% 73%);
+  font-weight: 300;
   line-height: 1.5;
-  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
 }
 
 /* =========
@@ -55,7 +60,8 @@ h1 a {
   text-decoration: none;
 }
 
-h1:hover {
+h1 a:hover,
+h1 a:focus {
   color: hsl(178, 100%, 50%)
 }
 
@@ -119,7 +125,8 @@ p {
   transition: opacity 100ms ease-in-out;
 }
 
-.imgWrapper:hover::after {
+.imgWrapper:hover::after,
+.imgWrapper:focus::after {
   opacity: 1;
   transition: opacity 100ms ease-in-out;
 }
@@ -174,43 +181,7 @@ p {
   text-decoration: none;
 }
 
-.footer a:hover {
+.footer a:hover,
+.footer a:focus {
   color: hsl(178, 100%, 50%);
 }
-
-
-/* =================================
-  Learning notes from this challenge
-  ================================== */
-
-/* ======= flexbox ======= */
-/* It does not make much sense to apply flexbox to elements like img, h, p etc. */
-/* Flexbox does not have margin collapse (so the margins of two flexbox items are added up). */
-/* Flexbox is always used on the nearest child element not on the content of this 
-     child element (if I set display: flex on a div, it controls positioning of elements inside 
-     this div, but not content of those elements). */
-/* https://www.youtube.com/watch?v=u044iM9xsWU */
-
-/* ======= pseudo-classes ====== */
-/* I can use pseudo-classes also on any CSS selector (p, .footer, div>h2.test,...). */
-/* Do not hesitate to use HTML elements in selectors !! */
-
-/* ======= pseudo-elements ======= */
-/* Pseudo-element always needs property content (it can be empty string). */
-/* I always need to use absolute position on the pseudo element and */
-/* img is inline element so we need to display it block because it leads to baseline alignment
-     of both images */
-/* https://www.youtube.com/watch?v=zGiirUiWslI */
-
-/* ====== best practice and notes ===== */
-/* Never add 'width' and 'height' properties to the html element, set it in CSS. */
-/* I can put svg elements in the img tag and use src="" for adding the svg to the layout. */
-/* Padding is something like stuffing - it is better to set it on this whole section 
-     element, because this automatically limit all the other children elements in this 
-     element -> I can set width of all these children elements to 100% and they will never
-     overflow. */
-/* Padding is not collapsing, so it means that if two element have 10px padding it will 
-     result in 20px padding together on the other hand margin has top and bottom collapsing 
-     so if I set margin to 10px on one element and 5px to other element it leads to 10px space. */
-/* Check contrast of the page with DevTools in Chrome. */
-/* Transition works as simple animation. */
