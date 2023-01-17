@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Code in GitHub](https://github.com/Ivuska/frontendmentor-NFT-preview-card-component/tree/NFT-component-v1)
-- Live Site URL: [Live solution on GitHub pages](https://ivuska.github.io/frontendmentor-NFT-preview-card-component/)
+- Live Site URL: [Live solution on GitHub pages](https://ifischerova.github.io/frontendmentor-NFT-preview-card-component/)
 
 ## My process
 
